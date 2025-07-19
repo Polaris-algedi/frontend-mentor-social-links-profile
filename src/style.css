@@ -3,8 +3,10 @@
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   /* Font weights */
-  --fw-medium: 500;
-  --fw-extra-bold: 800;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 
   /* Font sizes Desktop */
   --fs-desk-small: 0.875rem; /* 14px */
@@ -67,14 +69,6 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("assets/fonts/static/Inter-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
   src: url("assets/fonts/static/Inter-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -89,44 +83,13 @@
   font-display: swap;
 }
 
-/* Text presets */
-.text-preset-1 {
-  font-weight: var(--fw-extra-bold);
-  font-size: var(--fs-desk-large);
-  font-size: clamp(
-    var(--fs-mobile-large),
-    0.57vw + 1.12rem,
-    var(--fs-desk-large)
-  );
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-.text-preset-2 {
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-desk-medium);
-  font-size: clamp(
-    var(--fs-mobile-medium),
-    0.38vw + 0.8rem,
-    var(--fs-desk-medium)
-  );
-}
-.text-preset-3 {
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-desk-small);
-  font-size: clamp(
-    var(--fs-mobile-small),
-    0.19vw + 0.7rem,
-    var(--fs-desk-small)
-  );
-}
-.text-preset-3-bold {
-  font-weight: var(--fw-extra-bold);
-  font-size: var(--fs-desk-small);
-  font-size: clamp(
-    var(--fs-mobile-small),
-    0.19vw + 0.7rem,
-    var(--fs-desk-small)
-  );
-}
-
 body {
   font-family: inherit;
   color: var(--white);
@@ -149,10 +112,39 @@ body {
   gap: var(--space-300);
 }
 
+.card__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .card__avatar {
   width: var(--image-width);
   height: var(--image-height);
   border-radius: 50%;
+}
+
+.card__name {
+  font-size: var(--fs-desk-large);
+  font-weight: var(--fw-semi-bold);
+  text-align: center;
+  margin-bottom: var(--space-100);
+}
+
+.card__location {
+  font-size: var(--fs-desk-small);
+  font-weight: var(--fw-bold);
+  color: var(--green);
+  text-align: center;
+  margin-bottom: var(--space-300);
+}
+
+.card__bio {
+  font-size: var(--fs-desk-small);
+  font-weight: var(--fw-regular);
+  color: var(--white);
+  text-align: center;
 }
 
 .social-links {
@@ -172,8 +164,8 @@ body {
   justify-content: center;
   text-decoration: none;
   color: var(--white);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-desk-medium);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-desk-small);
 }
 
 .social-links__link:hover {
