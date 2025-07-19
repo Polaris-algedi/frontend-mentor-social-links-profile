@@ -1,0 +1,183 @@
+:root {
+  /* Font */
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  /* Font weights */
+  --fw-medium: 500;
+  --fw-extra-bold: 800;
+
+  /* Font sizes Desktop */
+  --fs-desk-small: 0.875rem; /* 14px */
+  --fs-desk-medium: 1rem; /* 16px */
+  --fs-desk-large: 1.5rem; /* 24px */
+
+  /* Font sizes Mobile */
+  --fs-mobile-small: 0.75rem; /* 12px */
+  --fs-mobile-medium: 0.875rem; /* 14px */
+  --fs-mobile-large: 1.25rem; /* 20px */
+
+  /* Spacing */
+  --space-50: 0.25rem; /* 4px */
+  --space-100: 0.5rem; /* 8px */
+  --space-150: 0.75rem; /* 12px */
+  --space-200: 1rem; /* 16px */
+  --space-300: 1.5rem; /* 24px */
+  --space-400: 2rem; /* 32px */
+  --space-500: 2.5rem; /* 40px */
+  --space-600: 3rem; /* 48px */
+
+  /* Radius */
+  --radius-4: 0.25rem; /* 4px */
+  --radius-6: 0.375rem; /* 6px */
+  --radius-8: 0.5rem; /* 8px */
+  --radius-10: 0.625rem; /* 10px */
+  --radius-12: 0.75rem; /* 12px */
+  --radius-20: 1.25rem; /* 20px */
+
+  /* Colors */
+
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+  --shadow: 8px 8px 0 0 black;
+
+  /* Widths */
+  --card-width: 24rem; /* 384px */
+  --card-width-mobile: 20rem; /* 320px */
+  --link-width: 19rem; /* 304px */
+  --link-width-mobile: 16rem; /* 256px */
+  --image-width: 5.625rem; /* 90px */
+
+  /* Heights */
+  --link-height: 2.75rem; /* 44px */
+  --link-height-mobile: 2.5rem; /* 40px */
+  --image-height: 5.625rem; /* 90px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Text presets */
+.text-preset-1 {
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fs-desk-large);
+  font-size: clamp(
+    var(--fs-mobile-large),
+    0.57vw + 1.12rem,
+    var(--fs-desk-large)
+  );
+}
+.text-preset-2 {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-desk-medium);
+  font-size: clamp(
+    var(--fs-mobile-medium),
+    0.38vw + 0.8rem,
+    var(--fs-desk-medium)
+  );
+}
+.text-preset-3 {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-desk-small);
+  font-size: clamp(
+    var(--fs-mobile-small),
+    0.19vw + 0.7rem,
+    var(--fs-desk-small)
+  );
+}
+.text-preset-3-bold {
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fs-desk-small);
+  font-size: clamp(
+    var(--fs-mobile-small),
+    0.19vw + 0.7rem,
+    var(--fs-desk-small)
+  );
+}
+
+body {
+  font-family: inherit;
+  color: var(--white);
+  background-color: var(--grey-900);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: var(--card-width);
+  height: auto;
+  background-color: var(--grey-800);
+  border-radius: var(--radius-10);
+  padding: var(--space-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-300);
+}
+
+.card__avatar {
+  width: var(--image-width);
+  height: var(--image-height);
+  border-radius: 50%;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  list-style: none;
+}
+
+.social-links__link {
+  width: var(--link-width);
+  height: var(--link-height);
+  background-color: var(--grey-700);
+  border-radius: var(--radius-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-desk-medium);
+}
+
+.social-links__link:hover {
+  background-color: var(--green);
+  cursor: pointer;
+  color: var(--grey-900);
+}
