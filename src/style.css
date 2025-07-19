@@ -173,6 +173,13 @@ body {
   color: var(--grey-900);
 }
 
+.social-links__link:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  background-color: var(--green);
+  color: var(--grey-900);
+}
+
 @media (max-width: 768px) {
   :root {
     --card-width: var(--card-width-mobile);
